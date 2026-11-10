@@ -63,7 +63,18 @@ try
     verPares.Ordenar(true);
     Console.WriteLine(verPares);
     Console.ReadKey();
-}
-catch (Exception) { 
 
+    Console.WriteLine("\nPrimos\n");
+    var verPares = oMyArreglo.ObtenerPrimos();
+    Console.WriteLine(verPrimos);
+    Console.ReadKey();
+
+    Console.WriteLine("\nPrimos Ordenados\n");
+    verPrimos.Ordenar();
+    Console.WriteLine(verPrimos);
+    Console.ReadKey();
+}
+catch (Exception ex) 
+{
+    Console.WriteLine(ex.Message);
 }
