@@ -43,3 +43,27 @@ Console.WriteLine(oMiArreglo);
 //Console.WriteLine(oMiArreglo);
 
 //Console.ReadKey();
+
+MiArreglo oMyArreglo = new(100);
+
+
+try
+{
+    Console.WriteLine("\nArreglo\n");
+    oMyArreglo.Llenar();
+    Console.WriteLine(oMyArreglo);
+    Console.ReadKey();
+
+    Console.WriteLine("\nPares\n");
+    var verPares = oMyArreglo.ObtenerPares();
+    Console.WriteLine(verPares);
+    Console.ReadKey();
+
+    Console.WriteLine("\nPares Ordenados\n");
+    verPares.Ordenar(true);
+    Console.WriteLine(verPares);
+    Console.ReadKey();
+}
+catch (Exception) { 
+
+}

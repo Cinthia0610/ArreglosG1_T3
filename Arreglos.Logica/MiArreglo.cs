@@ -25,7 +25,12 @@ namespace Arreglos.Logica
         public bool EstaVacio => _tope == 0;
 
         //Métodos
-        //Método Llenar
+        public void Llenar()
+        {
+            Llenar(1, 100);
+        }
+
+        //Método Llenar con parametros
         public void Llenar(int minimo, int maximo)
         {
             Random oRandom = new Random();
@@ -133,6 +138,31 @@ namespace Arreglos.Logica
                 _arreglo[i] = _arreglo[i + 1];
             }
             _tope--;
+        }
+
+        public MiArreglo ObtenerPares()
+        {
+
+            int contadorPares = 0;
+            for (int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    contadorPares++;
+                }
+            }
+
+            var arregloPares = new MiArreglo(contadorPares);
+
+            for(int i = 0; i < _tope; i++)
+            {
+                if (_arreglo[i] % 2 == 0)
+                {
+                    arregloPares.Agregar(_arreglo[i]);
+                }
+            }
+            return arregloPares;
+
         }
 
 
