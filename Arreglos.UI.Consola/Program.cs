@@ -44,37 +44,59 @@ Console.WriteLine(oMiArreglo);
 
 //Console.ReadKey();
 
-MiArreglo oMyArreglo = new(100);
+MiArreglo oMyArreglo = new(50000);
 
 
 try
 {
     Console.WriteLine("\nArreglo\n");
-    oMyArreglo.Llenar();
-    Console.WriteLine(oMyArreglo);
+    var tiempo1 = DateTime.Now;
+    oMiArreglo.Llenar(1, 999999);
+
+    Console.WriteLine(oMiArreglo);
+    var tiempo2 = DateTime.Now;
+
+    var restaTiempo = tiempo2 - tiempo1;
+
+    Console.WriteLine($"\nTiempo transcurrido:{restaTiempo.Minutes} minutos, {restaTiempo.Seconds} segundos, {restaTiempo.Milliseconds} milisegundos, {restaTiempo.Nanoseconds} nanosegundos ");
     Console.ReadKey();
 
-    Console.WriteLine("\nPares\n");
-    var verPares = oMyArreglo.ObtenerPares();
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+    //Console.WriteLine("\nPares\n");
+    //var verPares =oMiArreglo.ObtenerPares();
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
-    Console.WriteLine("\nPares Ordenados\n");
-    verPares.Ordenar(true);
-    Console.WriteLine(verPares);
-    Console.ReadKey();
+
+    //Console.WriteLine("Pares Ordenados\n");
+    //verPares.Ordenar(true);
+    //Console.WriteLine(verPares);
+    //Console.ReadKey();
 
     Console.WriteLine("\nPrimos\n");
-    var verPares = oMyArreglo.ObtenerPrimos();
+    var tiempo3 = DateTime.Now;
+    var verPrimos = oMiArreglo.ObtenerPrimos();
     Console.WriteLine(verPrimos);
+    var tiempo4 = DateTime.Now;
+
+    var restaTiempo2 = tiempo4 - tiempo3;
+    Console.WriteLine($"\nTiempo transcurrido:{restaTiempo2.Minutes} minutos, {restaTiempo2.Seconds} segundos, {restaTiempo2.Milliseconds} milisegundos, {restaTiempo2.Nanoseconds} nanosegundos ");
     Console.ReadKey();
 
-    Console.WriteLine("\nPrimos Ordenados\n");
-    verPrimos.Ordenar();
+
+    Console.WriteLine("Primos Ordenados\n");
+    var tiempo5 = DateTime.Now;
+    verPrimos.Ordenar(true);
     Console.WriteLine(verPrimos);
+    var tiempo6 = DateTime.Now;
+
+    var restaTiempo3 = tiempo6 - tiempo5;
+    Console.WriteLine($"\nTiempo transcurrido:{restaTiempo3.Minutes} minutos, {restaTiempo3.Seconds} segundos, {restaTiempo3.Milliseconds} milisegundos, {restaTiempo3.Nanoseconds} nanosegundos ");
+
     Console.ReadKey();
+
 }
-catch (Exception ex) 
+catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
+
